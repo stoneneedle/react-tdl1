@@ -15,7 +15,7 @@ export default class AddTask extends React.Component {
       <div>
         <label htmlFor="taskToList">Add Task: </label>
         <input value={this.props.taskToList} onChange={this.handleChange} />
-        <input type="submit" value="Click" />
+        <input className="btn btn-success" type="submit" value="Click" />
       </div>
     );
   }

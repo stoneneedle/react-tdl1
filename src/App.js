@@ -1,3 +1,4 @@
+import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
 import "./styles.css";
 import ShowTask from "./ShowTask";
 

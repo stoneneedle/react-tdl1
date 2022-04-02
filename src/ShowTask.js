@@ -30,7 +30,7 @@ export default class ShowTask extends React.Component {
   render() {
     return (
       <div>
-        <p>Tasks Array: {this.state.tasksArr.value}</p>
+        {/* <p>Tasks Array: {this.state.tasksArr.value}</p> */}
         <form onSubmit={this.handleSubmit}>
           <AddTask
             taskToList={this.state.taskName}

@@ -9,8 +9,8 @@ export default class TasksDisplay extends React.Component {
   }
 
   render() {
-    const tdlItems = this.props.toDoList.map((i) => (
-      <li key={i.toString()}>{i}</li>
+    const tdlItems = this.props.toDoList.map((item, index) => (
+      <li key={index.toString()}>{item}</li>
     ));
 
     return (
