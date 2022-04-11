@@ -29,7 +29,9 @@ This project utilizes Boostrap, React and NodeJS to write the app. No database o
 
 The following ideas represent a possible trajectory for this project:
 
-1. Login system: Users could login, save the GIF bundles that they create.
+1. Login system: Users could login, saving the task lists they create.
+1. Productivity Suite: Additional features such as deadlines and scheduling, as well as integration with Google/Microsoft Calendar.
+1. Sidebar: Further implement a sidebar with a user profile, previous task lists, and a publishing system to make task lists public if desired, as well as the ability to view published task lists.
 
 ## User Stories
 
