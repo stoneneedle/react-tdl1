@@ -6,7 +6,17 @@ This web site represents an initial foray into and demonstration of React skills
 
 ## Usage
 
-The app creates a task list based upon user input.
+The app creates a task list based upon user input. The user may enter a task and push the 'Add' button, and it will be added to the "Tasks To Be Completed" list. The user has buttons to the right of each task on the "Tasks To Be Completed" list, to either delete the task or mark it completed. Marking a task completed removes it from the "Tasks To Be Completed" list and adds it to the "Completed Tasks" list. Buttons for each task on the "Completed Tasks" list can then be removed with the delete button.
+
+This code may be installed and used in development mode with the following commands:
+
+```
+git clone https://github.com/stoneneedle/react-tdl1.git
+cd react-tdl
+npm install
+npm start
+```
+
 
 ## Technologies Used
 
