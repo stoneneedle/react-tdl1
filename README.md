@@ -1,8 +1,12 @@
 # react-taskman
 
+## Working Example
+
+You may find a working example of this code at [https://stoneneedle.github.io/react-tdl](https://stoneneedle.github.io/react-tdl).
+
 ## Overview
 
-This web site represents an initial foray into and demonstration of React skills.
+This web site represents an initial foray into and demonstration of React skills. Both stateful and stateless React components are demonstrated, as well as how to build and style the interface for a simple SPA to-do list app.
 
 ## Usage
 
@@ -17,10 +21,9 @@ npm install
 npm start
 ```
 
-
 ## Technologies Used
 
-This project utilizes Boostrap, React/Redux, and NodeJS to write the app. No database or backend server (other than the React test server) is used.
+This project utilizes Boostrap, React and NodeJS to write the app. No database or backend server (other than the React test server) is used.
 
 ## Ideas for Future Improvement
 
@@ -44,4 +47,4 @@ As a working mother, I want to keep a grocery list, so that I can stop forgettin
 
 ## References
 
-Dro
+None
