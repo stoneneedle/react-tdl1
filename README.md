@@ -46,7 +46,3 @@ As a working mother, I want to keep a grocery list, so that I can stop forgettin
 ### React TDL Wireframe (Index)
 
 ![React TDL Wireframe](https://github.com/stoneneedle/react-tdl1/blob/main/src/img/Project3ReactTDLWireframe2.png?raw=true "React TDL Index Site Wireframe")
-
-## References
-
-None
