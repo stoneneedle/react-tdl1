@@ -11,7 +11,10 @@ export default class TasksDisplay extends React.Component {
 
   render() {
     const tdlItems = this.props.toDoList.map((item, index) => (
-      <div className="card text-white bg-secondary mb-3">
+      <div
+        className="card text-white bg-secondary mb-3"
+        style={{ maxWidth: "18rem" }}
+      >
         <div className="card-body">
           <p className="card-text">{item}</p>
         </div>
@@ -19,9 +22,15 @@ export default class TasksDisplay extends React.Component {
     ));
 
     return (
-      <div>
-        <p>Tasks Display.</p>
-        {tdlItems}
+      <div
+        className="card text-dark bg-light mb-3"
+        style={{ maxWidth: "18rem" }}
+      >
+        <div className="card-header">To Do List</div>
+        <div className="card-body">
+          <h5 className="card-title">Tasks To Be Done</h5>
+          <p className="card-text">{tdlItems}</p>
+        </div>
       </div>
     );
   }
