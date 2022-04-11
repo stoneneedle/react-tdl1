@@ -26,11 +26,11 @@ As a busy site administrator, I want to log tasks that have been accomplished, s
 
 As a working mother, I want to keep a grocery list, so that I can stop forgetting what to buy at the store.
 
-## Wireframes
+## Wireframe
 
-### Wireframe 1 (Index)
+### React TDL Wireframe (Index)
 
-![Wireframe 1](https://link "Text")
+![React TDL Wireframe](https://github.com/stoneneedle/react-tdl/raw/main/src/img/Project3ReactTDLWireframe.png?raw=true "React TDL Index Site Wireframe")
 
 ## References
 
