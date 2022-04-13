@@ -30,17 +30,21 @@ export default class CompletedDisplay extends React.Component {
         </div>
       </div>
     ));
-    return (
-      <div
-        class="card text-white bg-success mb-3"
-        style={{ maxWidth: "18rem" }}
-      >
-        <div class="card-header">To Do List</div>
-        <div class="card-body">
-          <h5 class="card-title">Completed Tasks</h5>
-          <p class="card-text">{complItems}</p>
+    if (this.props.toDoList.length === 0) {
+      return <span></span>;
+    } else {
+      return (
+        <div
+          class="card text-white bg-success mb-3"
+          style={{ maxWidth: "18rem" }}
+        >
+          <div class="card-header">To Do List</div>
+          <div class="card-body">
+            <h5 class="card-title">Completed Tasks</h5>
+            <p class="card-text">{complItems}</p>
+          </div>
         </div>
-      </div>
-    );
+      );
+    }
   }
 }
