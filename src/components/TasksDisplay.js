@@ -1,8 +1,6 @@
 import React from "react";
-
-// Test change
-// Test change 2
-// <li key={index.toString()}>{item}</li>
+import TBDCheck from "./TBDCheck";
+import TBDX from "./TBDX";
 
 export default class TasksDisplay extends React.Component {
   constructor(props) {
@@ -16,7 +14,7 @@ export default class TasksDisplay extends React.Component {
         style={{ maxWidth: "18rem" }}
       >
         <div className="card-body">
-          <p className="card-text">{item}</p>
+          <p className="card-text">{item} <TBDCheck /> <TBDX /></p>
         </div>
       </div>
     ));
