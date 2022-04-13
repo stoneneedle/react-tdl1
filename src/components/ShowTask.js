@@ -7,12 +7,13 @@ export default class ShowTask extends React.Component {
   constructor(props) {
     super(props);
 
-    this.state = { taskName: "Task 1", tasksArr: [] };
+    this.state = { taskName: "Task 1", tasksArr: [], completedArr: [] };
 
     this.handleTaskChange = this.handleTaskChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleCheckClick = this.handleCheckClick.bind(this);
     this.handleXClick = this.handleXClick.bind(this);
+    this.handleComplXClick = this.handleComplXClick.bind(this);
   }
 
   handleTaskChange(taskVal) {
@@ -20,15 +21,30 @@ export default class ShowTask extends React.Component {
   }
 
   handleSubmit(e) {
+    e.preventDefault();
+    // copy array that's currently in state
     let itemsArr = JSON.parse(JSON.stringify(this.state.tasksArr));
+
+    // add task to itemsArr
     itemsArr.push(this.state.taskName);
 
+    // reset state
     this.setState({ tasksArr: itemsArr });
-    e.preventDefault();
   }
 
   handleCheckClick(e) {
-    console.log(e);
+    // copy array that's currently in state
+    let itemsArr = JSON.parse(JSON.stringify(this.state.tasksArr));
+    let completedItemsArr = JSON.parse(JSON.stringify(this.state.completedArr));
+
+    console.log(parseInt(e));
+    let completedTask = itemsArr.splice(parseInt(e), 1)[0];
+    console.log(itemsArr);
+    completedItemsArr.push(completedTask);
+
+    this.setState({ tasksArr: itemsArr, completedArr: completedItemsArr });
+
+    console.log(this.state);
   }
 
   handleXClick(e) {
@@ -36,8 +52,17 @@ export default class ShowTask extends React.Component {
     let itemsArr = JSON.parse(JSON.stringify(this.state.tasksArr));
 
     // remove task number from items array and reset state
-    itemsArr.splice(e, 1);
+    itemsArr.splice(parseInt(e), 1);
     this.setState({ tasksArr: itemsArr });
+  }
+
+  handleComplXClick(e) {
+    // copy array that's currently in state
+    let completedItemsArr = JSON.parse(JSON.stringify(this.state.completedArr));
+
+    // remove task number from items array and reset state
+    completedItemsArr.splice(parseInt(e), 1);
+    this.setState({ completedArr: completedItemsArr });
   }
 
   render() {
@@ -49,7 +74,10 @@ export default class ShowTask extends React.Component {
             onTaskChange={this.handleTaskChange}
           />
         </form>
-        <CompletedDisplay />
+        <CompletedDisplay
+          toDoList={this.state.completedArr}
+          onComplXClick={this.handleComplXClick}
+        />
         <TasksDisplay
           toDoList={this.state.tasksArr}
           onCheckClick={this.handleCheckClick}
