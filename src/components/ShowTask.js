@@ -1,6 +1,7 @@
 import React from "react";
 import AddTask from "./AddTask";
 import TasksDisplay from "./TasksDisplay";
+import CompletedDisplay from "./CompletedDisplay";
 
 export default class ShowTask extends React.Component {
   constructor(props) {
@@ -10,6 +11,7 @@ export default class ShowTask extends React.Component {
 
     this.handleTaskChange = this.handleTaskChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleCheckClick = this.handleCheckClick.bind(this);
     this.handleXClick = this.handleXClick.bind(this);
   }
 
@@ -25,6 +27,10 @@ export default class ShowTask extends React.Component {
     e.preventDefault();
   }
 
+  handleCheckClick(e) {
+    console.log(e);
+  }
+
   handleXClick(e) {
     // copy array that's currently in state
     let itemsArr = JSON.parse(JSON.stringify(this.state.tasksArr));
@@ -37,15 +43,16 @@ export default class ShowTask extends React.Component {
   render() {
     return (
       <div>
-        {/* <p>Tasks Array: {this.state.tasksArr.value}</p> */}
         <form onSubmit={this.handleSubmit}>
           <AddTask
             taskToList={this.state.taskName}
             onTaskChange={this.handleTaskChange}
           />
         </form>
+        <CompletedDisplay />
         <TasksDisplay
           toDoList={this.state.tasksArr}
+          onCheckClick={this.handleCheckClick}
           onXClick={this.handleXClick}
         />
       </div>

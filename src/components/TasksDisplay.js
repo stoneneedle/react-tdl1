@@ -3,10 +3,15 @@ import React from "react";
 export default class TasksDisplay extends React.Component {
   constructor(props) {
     super(props);
-    this.handleClick = this.handleClick.bind(this);
+    this.handleClickCheck = this.handleClickCheck.bind(this);
+    this.handleClickX = this.handleClickX.bind(this);
   }
 
-  handleClick(e) {
+  handleClickCheck(e) {
+    this.props.onCheckClick(e.target.value);
+  }
+
+  handleClickX(e) {
     this.props.onXClick(e.target.value);
   }
 
@@ -19,11 +24,20 @@ export default class TasksDisplay extends React.Component {
         <div className="card-body">
           <p className="card-text">
             {item}
-            <span>
-              <button value={index} onClick={this.handleClick}>
-                ❌
-              </button>
-            </span>
+            <button
+              value={index}
+              onClick={this.handleClickCheck}
+              className="tdl-button"
+            >
+              ✓
+            </button>
+            <button
+              value={index}
+              onClick={this.handleClickX}
+              className="tdl-button"
+            >
+              ❌
+            </button>
           </p>
         </div>
       </div>
