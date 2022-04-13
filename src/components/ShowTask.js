@@ -10,6 +10,7 @@ export default class ShowTask extends React.Component {
 
     this.handleTaskChange = this.handleTaskChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleXClick = this.handleXClick.bind(this);
   }
 
   handleTaskChange(taskVal) {
@@ -17,14 +18,20 @@ export default class ShowTask extends React.Component {
   }
 
   handleSubmit(e) {
-    //alert("A task was submitted: " + this.state.defTask);
-    console.log("A task was submitted: " + this.state.taskName);
-
     let itemsArr = JSON.parse(JSON.stringify(this.state.tasksArr));
     itemsArr.push(this.state.taskName);
-    console.log("itemsArr value: " + itemsArr);
+
     this.setState({ tasksArr: itemsArr });
     e.preventDefault();
+  }
+
+  handleXClick(e) {
+    // copy array that's currently in state
+    let itemsArr = JSON.parse(JSON.stringify(this.state.tasksArr));
+
+    // remove task number from items array and reset state
+    itemsArr.splice(e, 1);
+    this.setState({ tasksArr: itemsArr });
   }
 
   render() {
@@ -37,7 +44,10 @@ export default class ShowTask extends React.Component {
             onTaskChange={this.handleTaskChange}
           />
         </form>
-        <TasksDisplay toDoList={this.state.tasksArr} />
+        <TasksDisplay
+          toDoList={this.state.tasksArr}
+          onXClick={this.handleXClick}
+        />
       </div>
     );
   }

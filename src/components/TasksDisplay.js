@@ -1,10 +1,13 @@
 import React from "react";
-import TBDCheck from "./TBDCheck";
-import TBDX from "./TBDX";
 
 export default class TasksDisplay extends React.Component {
   constructor(props) {
     super(props);
+    this.handleClick = this.handleClick.bind(this);
+  }
+
+  handleClick(e) {
+    this.props.onXClick(e.target.value);
   }
 
   render() {
@@ -14,7 +17,14 @@ export default class TasksDisplay extends React.Component {
         style={{ maxWidth: "18rem" }}
       >
         <div className="card-body">
-          <p className="card-text">{item} <TBDCheck /> <TBDX /></p>
+          <p className="card-text">
+            {item}
+            <span>
+              <button value={index} onClick={this.handleClick}>
+                ❌
+              </button>
+            </span>
+          </p>
         </div>
       </div>
     ));
