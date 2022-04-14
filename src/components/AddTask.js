@@ -13,8 +13,20 @@ export default class AddTask extends React.Component {
   render() {
     return (
       <div>
-        <label htmlFor="taskToList">Add Task: </label>
-        <input value={this.props.taskToList} onChange={this.handleChange} />
+        <div className="input-group mb-3">
+          <span className="input-group-text" id="basic-addon1">
+            Add Task
+          </span>
+          <input
+            value={this.props.taskToList}
+            onChange={this.handleChange}
+            type="text"
+            className="form-control"
+            placeholder="Task"
+            aria-label="Task"
+            aria-describedby="basic-addon1"
+          />
+        </div>
         <input className="btn btn-success" type="submit" value="Add" />
       </div>
     );

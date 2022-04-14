@@ -68,21 +68,27 @@ export default class ShowTask extends React.Component {
   render() {
     return (
       <div>
-        <form onSubmit={this.handleSubmit}>
-          <AddTask
-            taskToList={this.state.taskName}
-            onTaskChange={this.handleTaskChange}
+        <div className="container mb-3">
+          <form onSubmit={this.handleSubmit}>
+            <AddTask
+              taskToList={this.state.taskName}
+              onTaskChange={this.handleTaskChange}
+            />
+          </form>
+        </div>
+        <div className="container p-3">
+          <CompletedDisplay
+            toDoList={this.state.completedArr}
+            onComplXClick={this.handleComplXClick}
           />
-        </form>
-        <CompletedDisplay
-          toDoList={this.state.completedArr}
-          onComplXClick={this.handleComplXClick}
-        />
-        <TasksDisplay
-          toDoList={this.state.tasksArr}
-          onCheckClick={this.handleCheckClick}
-          onXClick={this.handleXClick}
-        />
+        </div>
+        <div className="container p-3">
+          <TasksDisplay
+            toDoList={this.state.tasksArr}
+            onCheckClick={this.handleCheckClick}
+            onXClick={this.handleXClick}
+          />
+        </div>
       </div>
     );
   }

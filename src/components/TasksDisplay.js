@@ -25,23 +25,27 @@ export default class TasksDisplay extends React.Component {
           style={{ maxWidth: "18rem" }}
         >
           <div className="card-body">
-            <p className="card-text">
-              {item}
-              <button
-                value={index}
-                onClick={this.handleClickCheck}
-                className="tdl-button"
-              >
-                ✓
-              </button>
-              <button
-                value={index}
-                onClick={this.handleClickX}
-                className="tdl-button"
-              >
-                ❌
-              </button>
-            </p>
+            <div className="row">
+              <div className="col">
+                <p className="card-text">{item}</p>
+              </div>
+              <div className="col text-end">
+                <button
+                  value={index}
+                  onClick={this.handleClickCheck}
+                  className="tdl-button"
+                >
+                  ✓
+                </button>
+                <button
+                  value={index}
+                  onClick={this.handleClickX}
+                  className="tdl-button"
+                >
+                  ❌
+                </button>
+              </div>
+            </div>
           </div>
         </div>
       ));

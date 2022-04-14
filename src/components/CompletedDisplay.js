@@ -17,16 +17,20 @@ export default class CompletedDisplay extends React.Component {
         style={{ maxWidth: "18rem" }}
       >
         <div className="card-body">
-          <p className="card-text">
-            {item}
-            <button
-              value={index}
-              onClick={this.handleComplClickX}
-              className="tdl-button"
-            >
-              ❌
-            </button>
-          </p>
+          <div className="row">
+            <div className="col">
+              <p className="card-text">{item}</p>
+            </div>
+            <div className="col text-end">
+              <button
+                value={index}
+                onClick={this.handleComplClickX}
+                className="tdl-button"
+              >
+                ❌
+              </button>
+            </div>
+          </div>
         </div>
       </div>
     ));
