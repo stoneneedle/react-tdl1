@@ -19,7 +19,7 @@ export default class CompletedDisplay extends React.Component {
         <div className="card-body">
           <div className="row">
             <div className="col">
-              <p className="card-text">{item}</p>
+              <p className="card-text tdl-item-text">{item}</p>
             </div>
             <div className="col text-end">
               <button
@@ -39,13 +39,17 @@ export default class CompletedDisplay extends React.Component {
     } else {
       return (
         <div
-          class="card text-white bg-success mb-3"
+          className="card text-white bg-success mb-3"
           style={{ maxWidth: "18rem" }}
         >
-          <div class="card-header">To Do List</div>
-          <div class="card-body">
-            <h5 class="card-title">Completed Tasks</h5>
-            <p class="card-text">{complItems}</p>
+          <div className="card-header">
+            <h2>To Do List</h2>
+          </div>
+          <div className="card-body">
+            <div className="p-2">
+              <h3 className="card-title">Completed Tasks</h3>
+            </div>
+            {complItems}
           </div>
         </div>
       );

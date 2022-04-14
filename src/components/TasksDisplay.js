@@ -27,13 +27,13 @@ export default class TasksDisplay extends React.Component {
           <div className="card-body">
             <div className="row">
               <div className="col">
-                <p className="card-text">{item}</p>
+                <p className="card-text tdl-item-text">{item}</p>
               </div>
               <div className="col text-end">
                 <button
                   value={index}
                   onClick={this.handleClickCheck}
-                  className="tdl-button"
+                  className="tdl-button tdl-check"
                 >
                   ✓
                 </button>
@@ -55,10 +55,14 @@ export default class TasksDisplay extends React.Component {
           className="card text-dark bg-light mb-3"
           style={{ maxWidth: "18rem" }}
         >
-          <div className="card-header">To Do List</div>
+          <div className="card-header">
+            <h2>To Do List</h2>
+          </div>
           <div className="card-body">
-            <h5 className="card-title">Tasks To Be Done</h5>
-            <p className="card-text">{tdlItems}</p>
+            <div className="p-2">
+              <h3 className="card-title">Tasks To Be Done</h3>
+            </div>
+            {tdlItems}
           </div>
         </div>
       );

@@ -2,4 +2,16 @@
   padding: 0;
   border: none;
   background: none;
+  font-size: 16pt;
+}
+
+.tdl-check {
+  color: darkgreen;
+  font-weight: bold;
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000,
+    1px 1px 0 #000;
+}
+
+.tdl-item-text {
+  font-size: 14pt;
 }
