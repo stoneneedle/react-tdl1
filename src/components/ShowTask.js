@@ -68,7 +68,7 @@ export default class ShowTask extends React.Component {
   render() {
     return (
       <div>
-        <div className="container mb-3">
+        <div className="p-3">
           <form onSubmit={this.handleSubmit}>
             <AddTask
               taskToList={this.state.taskName}
@@ -76,13 +76,13 @@ export default class ShowTask extends React.Component {
             />
           </form>
         </div>
-        <div className="container p-3">
+        <div className="p-3">
           <CompletedDisplay
             toDoList={this.state.completedArr}
             onComplXClick={this.handleComplXClick}
           />
         </div>
-        <div className="container p-3">
+        <div className="p-3">
           <TasksDisplay
             toDoList={this.state.tasksArr}
             onCheckClick={this.handleCheckClick}
