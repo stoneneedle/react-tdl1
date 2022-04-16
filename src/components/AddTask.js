@@ -1,4 +1,5 @@
 import React from "react";
+import { Button, FormControl, InputGroup } from "react-bootstrap";
 
 export default class AddTask extends React.Component {
   constructor(props) {
@@ -13,27 +14,21 @@ export default class AddTask extends React.Component {
 
   render() {
     return (
-      <div>
-        <div className="input-group mb-3">
-          <span className="input-group-text" id="basic-addon1">
-            Add Task
-          </span>
-          <input
+      <>
+        <InputGroup className="mb-3">
+          <InputGroup.Text id="basic-addon1">Add Task</InputGroup.Text>
+          <FormControl
             value={this.props.taskToList}
             onChange={this.handleChange}
-            type="text"
-            className={
-              this.props.isInputValid
-                ? "form-control"
-                : "form-control is-invalid"
-            }
-            placeholder="Task"
-            aria-label="Task"
+            placeholder="Buy the groceries"
+            aria-label="Task 1"
             aria-describedby="basic-addon1"
           />
-        </div>
-        <input className="btn btn-success" type="submit" value="Add" />
-      </div>
+        </InputGroup>
+        <Button variant="success" type="submit">
+          Add
+        </Button>
+      </>
     );
   }
 }
