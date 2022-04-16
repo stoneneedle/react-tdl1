@@ -14,16 +14,17 @@ export default class CompletedDisplay extends React.Component {
     const complItems = this.props.toDoList.map((item, index) => (
       <div
         className="card text-white bg-secondary mb-3"
+        key={item.id}
         style={{ maxWidth: "18rem" }}
       >
         <div className="card-body">
           <div className="row">
             <div className="col">
-              <p className="card-text tdl-item-text">{item}</p>
+              <p className="card-text tdl-item-text">{item.task}</p>
             </div>
             <div className="col text-end">
               <button
-                value={index}
+                value={item.id}
                 onClick={this.handleComplClickX}
                 className="tdl-button"
               >

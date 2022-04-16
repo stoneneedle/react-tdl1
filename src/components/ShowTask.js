@@ -2,6 +2,7 @@ import React from "react";
 import AddTask from "./AddTask";
 import TasksDisplay from "./TasksDisplay";
 import CompletedDisplay from "./CompletedDisplay";
+import { v4 as uuidv4 } from "uuid";
 
 export default class ShowTask extends React.Component {
   constructor(props) {
@@ -22,47 +23,66 @@ export default class ShowTask extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
+
+    // create task object
+    let taskObj = {
+      id: uuidv4(),
+      task: this.state.taskName
+    };
+
     // copy array that's currently in state
-    let itemsArr = JSON.parse(JSON.stringify(this.state.tasksArr));
+    let itemsArr = structuredClone(this.state.tasksArr);
 
     // add task to itemsArr
-    itemsArr.push(this.state.taskName);
+    itemsArr.push(taskObj);
 
     // reset state
     this.setState({ tasksArr: itemsArr });
   }
 
   handleCheckClick(e) {
-    // copy array that's currently in state
-    let itemsArr = JSON.parse(JSON.stringify(this.state.tasksArr));
-    let completedItemsArr = JSON.parse(JSON.stringify(this.state.completedArr));
+    // copy arrays that're currently in state
+    let itemsArr = structuredClone(this.state.tasksArr);
+    let completedItemsArr = structuredClone(this.state.completedArr);
 
-    console.log(parseInt(e, 10));
-    let completedTask = itemsArr.splice(parseInt(e, 10), 1)[0];
-    console.log(itemsArr);
-    completedItemsArr.push(completedTask);
+    // filter out the objects that don't have the selected ID to keep
+    let filteredItemsArr = itemsArr.filter((item) => item.id !== e);
 
-    this.setState({ tasksArr: itemsArr, completedArr: completedItemsArr });
+    // select completed task object by ID
+    let completedTask = itemsArr.filter((item) => item.id === e);
+
+    completedItemsArr.push(...completedTask);
+
+    this.setState({
+      tasksArr: filteredItemsArr,
+      completedArr: completedItemsArr
+    });
 
     console.log(this.state);
   }
 
   handleXClick(e) {
     // copy array that's currently in state
-    let itemsArr = JSON.parse(JSON.stringify(this.state.tasksArr));
+    let itemsArr = structuredClone(this.state.tasksArr);
 
-    // remove task number from items array and reset state
-    itemsArr.splice(parseInt(e, 10), 1);
-    this.setState({ tasksArr: itemsArr });
+    // filter out the objects that don't have the selected ID to keep
+    let filteredItemsArr = itemsArr.filter((item) => item.id !== e);
+
+    // reset state
+    this.setState({ tasksArr: filteredItemsArr });
   }
 
   handleComplXClick(e) {
     // copy array that's currently in state
-    let completedItemsArr = JSON.parse(JSON.stringify(this.state.completedArr));
+    let completedItemsArr = structuredClone(this.state.completedArr);
 
     // remove task number from items array and reset state
-    completedItemsArr.splice(parseInt(e, 10), 1);
-    this.setState({ completedArr: completedItemsArr });
+    let filteredCompletedItemsArr = completedItemsArr.filter(
+      (item) => item.id !== e
+    );
+
+    //completedItemsArr.splice(parseInt(e, 10), 1);
+    this.setState({ completedArr: filteredCompletedItemsArr });
   }
 
   render() {
