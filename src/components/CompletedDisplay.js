@@ -25,14 +25,7 @@ export default class CompletedDisplay extends React.Component {
               <Col className="text-end">
                 <Button
                   value={item.id}
-                  onClick={this.handleClickCheck}
-                  className="tdl-button tdl-check"
-                >
-                  ✓
-                </Button>
-                <Button
-                  value={item.id}
-                  onClick={this.handleClickX}
+                  onClick={this.handleComplClickX}
                   className="tdl-button"
                 >
                   ❌
