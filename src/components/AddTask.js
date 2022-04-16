@@ -3,6 +3,7 @@ import React from "react";
 export default class AddTask extends React.Component {
   constructor(props) {
     super(props);
+
     this.handleChange = this.handleChange.bind(this);
   }
 
@@ -21,7 +22,11 @@ export default class AddTask extends React.Component {
             value={this.props.taskToList}
             onChange={this.handleChange}
             type="text"
-            className="form-control"
+            className={
+              this.props.isInputValid
+                ? "form-control"
+                : "form-control is-invalid"
+            }
             placeholder="Task"
             aria-label="Task"
             aria-describedby="basic-addon1"

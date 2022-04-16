@@ -8,7 +8,12 @@ export default class ShowTask extends React.Component {
   constructor(props) {
     super(props);
 
-    this.state = { taskName: "", tasksArr: [], completedArr: [] };
+    this.state = {
+      taskName: "",
+      tasksArr: [],
+      completedArr: [],
+      isValidInput: true
+    };
 
     this.handleTaskChange = this.handleTaskChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -38,9 +43,9 @@ export default class ShowTask extends React.Component {
       itemsArr.push(taskObj);
 
       // reset state
-      this.setState({ tasksArr: itemsArr });
+      this.setState({ tasksArr: itemsArr, isValidInput: true });
     } else {
-      this.setState({ error: "Empty message." });
+      this.setState({ isValidInput: false });
     }
   }
 
@@ -83,7 +88,7 @@ export default class ShowTask extends React.Component {
       (item) => item.id !== e
     );
 
-    //completedItemsArr.splice(parseInt(e, 10), 1);
+    // reset state
     this.setState({ completedArr: filteredCompletedItemsArr });
   }
 
@@ -93,6 +98,7 @@ export default class ShowTask extends React.Component {
         <div className="p-3">
           <form onSubmit={this.handleSubmit}>
             <AddTask
+              isInputValid={this.state.isValidInput}
               taskToList={this.state.taskName}
               onTaskChange={this.handleTaskChange}
             />
