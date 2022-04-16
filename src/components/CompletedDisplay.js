@@ -1,4 +1,5 @@
 import React from "react";
+import { Button, Card, Col, Row } from "react-bootstrap";
 
 export default class CompletedDisplay extends React.Component {
   constructor(props) {
@@ -12,47 +13,54 @@ export default class CompletedDisplay extends React.Component {
 
   render() {
     const complItems = this.props.toDoList.map((item, index) => (
-      <div
-        className="card text-white bg-secondary mb-3"
-        key={item.id}
-        style={{ maxWidth: "18rem" }}
-      >
-        <div className="card-body">
-          <div className="row">
-            <div className="col">
-              <p className="card-text tdl-item-text">{item.task}</p>
-            </div>
-            <div className="col text-end">
-              <button
-                value={item.id}
-                onClick={this.handleComplClickX}
-                className="tdl-button"
-              >
-                ❌
-              </button>
-            </div>
-          </div>
-        </div>
-      </div>
+      <>
+        <Card
+          className="bg-secondary text-white mb-2"
+          key={item.id}
+          style={{ width: "16rem" }}
+        >
+          <Card.Body>
+            <Row>
+              <Col className="tdl-item-text">{item.task}</Col>
+              <Col className="text-end">
+                <Button
+                  value={item.id}
+                  onClick={this.handleClickCheck}
+                  className="tdl-button tdl-check"
+                >
+                  ✓
+                </Button>
+                <Button
+                  value={item.id}
+                  onClick={this.handleClickX}
+                  className="tdl-button"
+                >
+                  ❌
+                </Button>
+              </Col>
+            </Row>
+          </Card.Body>
+        </Card>
+      </>
     ));
     if (this.props.toDoList.length === 0) {
-      return <span></span>;
+      return <></>;
     } else {
       return (
-        <div
-          className="card text-white bg-success mb-3"
-          style={{ maxWidth: "18rem" }}
-        >
-          <div className="card-header">
-            <h2>To Do List</h2>
-          </div>
-          <div className="card-body">
-            <div className="p-2">
+        <>
+          <Card
+            className="bg-success text-white mb-3"
+            style={{ width: "18rem" }}
+          >
+            <Card.Header>
+              <h2>To Do List</h2>
+            </Card.Header>
+            <Card.Body>
               <h3 className="card-title">Completed Tasks</h3>
-            </div>
-            {complItems}
-          </div>
-        </div>
+            </Card.Body>
+            <Card.Body>{complItems}</Card.Body>
+          </Card>
+        </>
       );
     }
   }

@@ -22,13 +22,13 @@ export default class TasksDisplay extends React.Component {
     } else {
       const tdlItems = this.props.toDoList.map((item) => (
         <Card
-          className="bg-secondary text-white"
+          className="bg-secondary text-white mb-2"
           key={item.id}
           style={{ width: "16rem" }}
         >
           <Card.Body>
             <Row>
-              <Col>{item.task}</Col>
+              <Col className="tdl-item-text">{item.task}</Col>
               <Col className="text-end">
                 <Button
                   value={item.id}
