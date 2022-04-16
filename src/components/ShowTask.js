@@ -37,8 +37,8 @@ export default class ShowTask extends React.Component {
     let itemsArr = JSON.parse(JSON.stringify(this.state.tasksArr));
     let completedItemsArr = JSON.parse(JSON.stringify(this.state.completedArr));
 
-    console.log(parseInt(e));
-    let completedTask = itemsArr.splice(parseInt(e), 1)[0];
+    console.log(parseInt(e, 10));
+    let completedTask = itemsArr.splice(parseInt(e, 10), 1)[0];
     console.log(itemsArr);
     completedItemsArr.push(completedTask);
 
@@ -52,7 +52,7 @@ export default class ShowTask extends React.Component {
     let itemsArr = JSON.parse(JSON.stringify(this.state.tasksArr));
 
     // remove task number from items array and reset state
-    itemsArr.splice(parseInt(e), 1);
+    itemsArr.splice(parseInt(e, 10), 1);
     this.setState({ tasksArr: itemsArr });
   }
 
@@ -61,7 +61,7 @@ export default class ShowTask extends React.Component {
     let completedItemsArr = JSON.parse(JSON.stringify(this.state.completedArr));
 
     // remove task number from items array and reset state
-    completedItemsArr.splice(parseInt(e), 1);
+    completedItemsArr.splice(parseInt(e, 10), 1);
     this.setState({ completedArr: completedItemsArr });
   }
 

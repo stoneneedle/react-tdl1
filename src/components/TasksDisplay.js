@@ -1,4 +1,5 @@
 import React from "react";
+import { v4 as uuidv4 } from "uuid";
 
 export default class TasksDisplay extends React.Component {
   constructor(props) {
@@ -22,6 +23,7 @@ export default class TasksDisplay extends React.Component {
       const tdlItems = this.props.toDoList.map((item, index) => (
         <div
           className="card text-white bg-secondary mb-3"
+          key={uuidv4()}
           style={{ maxWidth: "18rem" }}
         >
           <div className="card-body">
@@ -42,7 +44,9 @@ export default class TasksDisplay extends React.Component {
                   onClick={this.handleClickX}
                   className="tdl-button"
                 >
-                  ❌
+                  <span role="img" aria-label="x">
+                    ❌
+                  </span>
                 </button>
               </div>
             </div>
