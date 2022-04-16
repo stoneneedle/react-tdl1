@@ -1,4 +1,5 @@
 import React from "react";
+import { Button, Card, Col, Row } from "react-bootstrap";
 
 export default class TasksDisplay extends React.Component {
   constructor(props) {
@@ -17,55 +18,50 @@ export default class TasksDisplay extends React.Component {
 
   render() {
     if (this.props.toDoList.length === 0) {
-      return <span></span>;
+      return <></>;
     } else {
-      const tdlItems = this.props.toDoList.map((item, index) => (
-        <div
-          className="card text-white bg-secondary mb-3"
+      const tdlItems = this.props.toDoList.map((item) => (
+        <Card
+          className="bg-secondary text-white"
           key={item.id}
-          style={{ maxWidth: "18rem" }}
+          style={{ width: "16rem" }}
         >
-          <div className="card-body">
-            <div className="row">
-              <div className="col">
-                <p className="card-text tdl-item-text">{item.task}</p>
-              </div>
-              <div className="col text-end">
-                <button
+          <Card.Body>
+            <Row>
+              <Col>{item.task}</Col>
+              <Col className="text-end">
+                <Button
                   value={item.id}
                   onClick={this.handleClickCheck}
                   className="tdl-button tdl-check"
                 >
                   ✓
-                </button>
-                <button
+                </Button>
+                <Button
                   value={item.id}
                   onClick={this.handleClickX}
                   className="tdl-button"
                 >
                   ❌
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
+                </Button>
+              </Col>
+            </Row>
+          </Card.Body>
+        </Card>
       ));
 
       return (
-        <div
-          className="card text-dark bg-light mb-3"
-          style={{ maxWidth: "18rem" }}
-        >
-          <div className="card-header">
-            <h2>To Do List</h2>
-          </div>
-          <div className="card-body">
-            <div className="p-2">
+        <>
+          <Card style={{ width: "18rem" }}>
+            <Card.Header>
+              <h2>To Do List</h2>
+            </Card.Header>
+            <Card.Body>
               <h3 className="card-title">Tasks To Be Done</h3>
-            </div>
-            {tdlItems}
-          </div>
-        </div>
+            </Card.Body>
+            <Card.Body>{tdlItems}</Card.Body>
+          </Card>
+        </>
       );
     }
   }

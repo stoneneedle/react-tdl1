@@ -5,11 +5,18 @@
   font-size: 16pt;
 }
 
+.tdl-button:hover {
+  background: none;
+}
+
 .tdl-check {
   color: darkgreen;
   font-weight: bold;
   text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000,
     1px 1px 0 #000;
+}
+.tdl-check:hover {
+  color: darkgreen;
 }
 
 .tdl-item-text {
