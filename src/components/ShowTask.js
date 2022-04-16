@@ -8,7 +8,7 @@ export default class ShowTask extends React.Component {
   constructor(props) {
     super(props);
 
-    this.state = { taskName: "Task 1", tasksArr: [], completedArr: [] };
+    this.state = { taskName: "", tasksArr: [], completedArr: [] };
 
     this.handleTaskChange = this.handleTaskChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -24,20 +24,24 @@ export default class ShowTask extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
 
-    // create task object
-    let taskObj = {
-      id: uuidv4(),
-      task: this.state.taskName
-    };
+    if (this.state.taskName.trim().length > 0) {
+      // create task object
+      let taskObj = {
+        id: uuidv4(),
+        task: this.state.taskName
+      };
 
-    // copy array that's currently in state
-    let itemsArr = structuredClone(this.state.tasksArr);
+      // copy array that's currently in state
+      let itemsArr = structuredClone(this.state.tasksArr);
 
-    // add task to itemsArr
-    itemsArr.push(taskObj);
+      // add task to itemsArr
+      itemsArr.push(taskObj);
 
-    // reset state
-    this.setState({ tasksArr: itemsArr });
+      // reset state
+      this.setState({ tasksArr: itemsArr });
+    } else {
+      this.setState({ error: "Empty message." });
+    }
   }
 
   handleCheckClick(e) {
@@ -57,8 +61,6 @@ export default class ShowTask extends React.Component {
       tasksArr: filteredItemsArr,
       completedArr: completedItemsArr
     });
-
-    console.log(this.state);
   }
 
   handleXClick(e) {
