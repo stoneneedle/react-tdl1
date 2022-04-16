@@ -3,13 +3,14 @@ import "../node_modules/bootstrap/dist/js/bootstrap";
 import "./styles.css";
 import Header from "./components/Header";
 import ShowTask from "./components/ShowTask";
+import { Container } from "react-bootstrap";
 
 export default function App() {
   return (
     <>
       <Header />
       <div className="App">
-        <div className="container-fluid">
+        <Container fluid>
           <div className="p-3">
             <h1>React-TDL</h1>
             <h2>Project 3</h2>
@@ -18,7 +19,7 @@ export default function App() {
             </p>
           </div>
           <ShowTask />
-        </div>
+        </Container>
       </div>
     </>
   );
