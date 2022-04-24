@@ -20,8 +20,8 @@ export default class CompletedDisplay extends React.Component {
         >
           <Card.Body>
             <Row>
-              <Col className="tdl-item-text">{item.task}</Col>
-              <Col className="text-end">
+              <Col xs={10} className="tdl-item-text">{item.task}</Col>
+              <Col xs={2} className="text-end">
                 <Button
                   value={item.id}
                   onClick={this.handleComplClickX}
