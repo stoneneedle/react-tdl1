@@ -13,7 +13,6 @@ export default function App() {
         <Container fluid>
           <div className="p-3">
             <h1>React-TDL</h1>
-            <h2>Project 3</h2>
             <p className="tdl-item-text">
               Make your to-do list by adding tasks below.
             </p>

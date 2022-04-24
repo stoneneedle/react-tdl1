@@ -1,5 +1,5 @@
 import React from "react";
-import { Button, FormControl, InputGroup } from "react-bootstrap";
+import { Button, Form, FormControl, InputGroup } from "react-bootstrap";
 
 export default class AddTask extends React.Component {
   constructor(props) {
@@ -23,7 +23,11 @@ export default class AddTask extends React.Component {
             placeholder="Buy the groceries"
             aria-label="Task 1"
             aria-describedby="basic-addon1"
+            isInvalid={(this.props.isInputValid) ? false : true}
           />
+          <Form.Control.Feedback type="invalid">
+            Please enter some text.
+          </Form.Control.Feedback>
         </InputGroup>
         <Button variant="success" type="submit">
           Add
