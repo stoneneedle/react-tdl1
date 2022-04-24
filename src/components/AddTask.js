@@ -16,8 +16,9 @@ export default class AddTask extends React.Component {
     return (
       <>
         <InputGroup className="mb-3">
-          <InputGroup.Text id="basic-addon1">Add Task</InputGroup.Text>
+          <InputGroup.Text className="add-task" id="basic-addon1">Add Task</InputGroup.Text>
           <FormControl
+            className="task-ctrl"
             value={this.props.taskToList}
             onChange={this.handleChange}
             placeholder="Buy the groceries"

@@ -12,9 +12,9 @@ export default function App() {
       <div className="App">
         <Container fluid>
           <div className="p-3">
-            <h1>React-TDL</h1>
+            <h1>BucketListr React-TDL</h1>
             <p className="tdl-item-text">
-              Make your to-do list by adding tasks below.
+              Make your bucket list or to-do list by adding tasks below.
             </p>
           </div>
           <ShowTask />

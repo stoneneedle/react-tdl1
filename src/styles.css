@@ -1,3 +1,19 @@
+body {
+  background-color: #777;
+  color: #fff;
+}
+
+.add-task {
+  background-color: #333;
+  color: #fff;
+}
+
+.task-ctrl, .task-ctrl:focus, .task-ctrl::placeholder {
+  background-color: #333;
+  color: #fff;
+  opacity: 1;
+}
+
 .tdl-button {
   padding: 0;
   border: none;
