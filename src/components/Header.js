@@ -1,5 +1,5 @@
 import React from "react";
-import { Navbar, Container, Nav } from "react-bootstrap";
+import { Navbar, Container, Nav, } from "react-bootstrap";
 
 export default class Header extends React.Component {
   render() {
@@ -7,7 +7,9 @@ export default class Header extends React.Component {
       <header>
         <Navbar bg="dark" variant="dark" expand="lg">
           <Container>
-            <Navbar.Brand href="#home">BucketListr-TDL</Navbar.Brand>
+            <Navbar.Brand href="#home">
+              <img src="https://i.ibb.co/HC0Xwq5/Bucket.png" width="30" /> BucketListr-TDL
+            </Navbar.Brand>
             <Navbar.Toggle aria-controls="basic-navbar-nav" />
             <Navbar.Collapse id="basic-navbar-nav">
               <Nav className="me-auto">
