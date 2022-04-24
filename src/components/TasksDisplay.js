@@ -28,7 +28,7 @@ export default class TasksDisplay extends React.Component {
           <Card.Body>
             <Row>
               <Col xs={9} md={10} className="tdl-item-text">{item.task}</Col>
-              <Col xs={3} md={2}>
+              <Col xs={3} md={2} className="text-end">
                 <Button
                   value={item.id}
                   onClick={this.handleClickCheck}

@@ -21,7 +21,7 @@ export default class CompletedDisplay extends React.Component {
           <Card.Body>
             <Row>
               <Col xs={10} md={11} className="tdl-item-text">{item.task}</Col>
-              <Col xs={2} md={1}>
+              <Col xs={2} md={1} className="text-end">
                 <Button
                   value={item.id}
                   onClick={this.handleComplClickX}
