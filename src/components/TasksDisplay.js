@@ -27,8 +27,8 @@ export default class TasksDisplay extends React.Component {
         >
           <Card.Body>
             <Row>
-              <Col xs={10} className="tdl-item-text">{item.task}</Col>
-              <Col xs={2} className="text-end">
+              <Col xs={9} md={10} className="tdl-item-text">{item.task}</Col>
+              <Col xs={3} md={2} className="text-end" style={{display: 'inline-block'}}>
                 <Button
                   value={item.id}
                   onClick={this.handleClickCheck}
@@ -51,7 +51,7 @@ export default class TasksDisplay extends React.Component {
 
       return (
         <>
-          <Card>
+          <Card className="bg-warning">
             <Card.Header>
               <h2>To Do List</h2>
             </Card.Header>
