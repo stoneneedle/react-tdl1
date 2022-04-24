@@ -7,8 +7,8 @@ export default class Header extends React.Component {
       <header>
         <Navbar bg="dark" variant="dark" expand="lg">
           <Container>
-            <Navbar.Brand href="#home">
-              <img src="https://i.ibb.co/HC0Xwq5/Bucket.png" width="30" /> BucketListr-TDL
+            <Navbar.Brand href="#home" className="justify-content-start">
+              <img src="https://i.ibb.co/25Z0YDG/BucketSM.png" /> BucketListr-TDL
             </Navbar.Brand>
             <Navbar.Toggle aria-controls="basic-navbar-nav" />
             <Navbar.Collapse id="basic-navbar-nav">
