@@ -21,7 +21,7 @@ export default class AddTask extends React.Component {
             className="task-ctrl"
             value={this.props.taskToList}
             onChange={this.handleChange}
-            placeholder="Buy the groceries"
+            placeholder="See the Grand Canyon"
             aria-label="Task 1"
             aria-describedby="basic-addon1"
             isInvalid={(this.props.isInputValid) ? false : true}
