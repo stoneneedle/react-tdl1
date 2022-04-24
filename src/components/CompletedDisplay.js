@@ -17,7 +17,6 @@ export default class CompletedDisplay extends React.Component {
         <Card
           className="bg-secondary text-white mb-2"
           key={item.id}
-          // style={{ width: "16rem" }}
         >
           <Card.Body>
             <Row>
@@ -43,7 +42,6 @@ export default class CompletedDisplay extends React.Component {
         <>
           <Card
             className="bg-success text-white mb-3"
-            // style={{ width: "18rem" }}
           >
             <Card.Header>
               <h2>To Do List</h2>

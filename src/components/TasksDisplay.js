@@ -24,7 +24,6 @@ export default class TasksDisplay extends React.Component {
         <Card
           className="bg-secondary text-white mb-2"
           key={item.id}
-          // style={{ width: "16rem" }}
         >
           <Card.Body>
             <Row>
