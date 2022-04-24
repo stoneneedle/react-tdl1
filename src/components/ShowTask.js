@@ -43,7 +43,7 @@ export default class ShowTask extends React.Component {
       itemsArr.push(taskObj);
 
       // reset state
-      this.setState({ tasksArr: itemsArr, isValidInput: true });
+      this.setState({ taskName: '', tasksArr: itemsArr, isValidInput: true });
     } else {
       this.setState({ isValidInput: false });
     }
