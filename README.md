@@ -45,4 +45,4 @@ As a working mother, I want to keep a grocery list, so that I can stop forgettin
 
 ### React TDL Wireframe (Index)
 
-![React TDL Wireframe](http://drive.google.com/uc?export=view&id=1A3TTf81xodOtnHyC1BywS_Z3CMN-UFbS "React TDL Index Site Wireframe")
+![React TDL Wireframe](https://ibb.co/MGG6WcH "React TDL Index Site Wireframe")
